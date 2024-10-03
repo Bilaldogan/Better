@@ -33,6 +33,7 @@
 		9C71A3992CAEDB9C00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Foundation/LoggerKit,
 				Info.plist,
 			);
 			target = 9C71A3572CAED30B00247291 /* BetBetter */;

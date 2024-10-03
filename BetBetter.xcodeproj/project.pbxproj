@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9C71A3A12CAEE3BE00247291 /* LoggerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A02CAEE3BE00247291 /* LoggerKit */; };
+		9C71A3A32CAEE3BE00247291 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A22CAEE3BE00247291 /* Network */; };
+		9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A42CAEE3BE00247291 /* NetworkInterface */; };
+		9C71A3A72CAF011400247291 /* ToolKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A62CAF011400247291 /* ToolKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9C71A36F2CAED30E00247291 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -58,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C71A3A12CAEE3BE00247291 /* LoggerKit in Frameworks */,
+				9C71A3A72CAF011400247291 /* ToolKit in Frameworks */,
+				9C71A3A32CAEE3BE00247291 /* Network in Frameworks */,
+				9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9C71A35A2CAED30B00247291 /* BetBetter */,
+				9C71A39F2CAEE3BE00247291 /* Frameworks */,
 				9C71A3592CAED30B00247291 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +106,13 @@
 				9C71A3782CAED30E00247291 /* BetBetterUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9C71A39F2CAEE3BE00247291 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +135,10 @@
 			);
 			name = BetBetter;
 			packageProductDependencies = (
+				9C71A3A02CAEE3BE00247291 /* LoggerKit */,
+				9C71A3A22CAEE3BE00247291 /* Network */,
+				9C71A3A42CAEE3BE00247291 /* NetworkInterface */,
+				9C71A3A62CAF011400247291 /* ToolKit */,
 			);
 			productName = BetBetter;
 			productReference = 9C71A3582CAED30B00247291 /* BetBetter.app */;
@@ -274,6 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 485DM6B77Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetBetter/Info.plist;
@@ -303,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 485DM6B77Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetBetter/Info.plist;
@@ -556,6 +581,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C71A3A02CAEE3BE00247291 /* LoggerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoggerKit;
+		};
+		9C71A3A22CAEE3BE00247291 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		9C71A3A42CAEE3BE00247291 /* NetworkInterface */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkInterface;
+		};
+		9C71A3A62CAF011400247291 /* ToolKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ToolKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9C71A3502CAED30B00247291 /* Project object */;
 }

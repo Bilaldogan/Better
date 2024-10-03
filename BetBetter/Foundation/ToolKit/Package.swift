@@ -13,7 +13,6 @@ let package = Package(
             targets: ["ToolKit"]),
     ],
     dependencies: [
-        .package(name: "LocalizationKit", path: "../LocalizationKit")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -21,7 +20,6 @@ let package = Package(
         .target(
             name: "ToolKit",
             dependencies: [
-                .product(name: "LocalizationKit", package: "LocalizationKit")
             ],
             resources: [
                 .process("Resources")

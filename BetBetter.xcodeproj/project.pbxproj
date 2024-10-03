@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9C71A3802CAED30E00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */ = {
+		9C71A3992CAEDB9C00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,19 +43,9 @@
 		9C71A35A2CAED30B00247291 /* BetBetter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9C71A3802CAED30E00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */,
+				9C71A3992CAEDB9C00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */,
 			);
 			path = BetBetter;
-			sourceTree = "<group>";
-		};
-		9C71A3712CAED30E00247291 /* BetBetterTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BetBetterTests;
-			sourceTree = "<group>";
-		};
-		9C71A37B2CAED30E00247291 /* BetBetterUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BetBetterUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -89,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				9C71A35A2CAED30B00247291 /* BetBetter */,
-				9C71A3712CAED30E00247291 /* BetBetterTests */,
-				9C71A37B2CAED30E00247291 /* BetBetterUITests */,
 				9C71A3592CAED30B00247291 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,9 +131,6 @@
 			dependencies = (
 				9C71A3702CAED30E00247291 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				9C71A3712CAED30E00247291 /* BetBetterTests */,
-			);
 			name = BetBetterTests;
 			packageProductDependencies = (
 			);
@@ -165,9 +150,6 @@
 			);
 			dependencies = (
 				9C71A37A2CAED30E00247291 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9C71A37B2CAED30E00247291 /* BetBetterUITests */,
 			);
 			name = BetBetterUITests;
 			packageProductDependencies = (
@@ -297,6 +279,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +308,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

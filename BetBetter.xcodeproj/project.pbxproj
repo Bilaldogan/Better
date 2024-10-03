@@ -11,6 +11,7 @@
 		9C71A3A32CAEE3BE00247291 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A22CAEE3BE00247291 /* Network */; };
 		9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A42CAEE3BE00247291 /* NetworkInterface */; };
 		9C71A3A72CAF011400247291 /* ToolKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A62CAF011400247291 /* ToolKit */; };
+		9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3AA2CB0074800247291 /* MVVMKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 			membershipExceptions = (
 				DataLayer/Network,
 				Foundation/LoggerKit,
+				Foundation/MVVMKit,
 				Foundation/ToolKit,
 				Info.plist,
 			);
@@ -67,6 +69,7 @@
 			files = (
 				9C71A3A12CAEE3BE00247291 /* LoggerKit in Frameworks */,
 				9C71A3A72CAF011400247291 /* ToolKit in Frameworks */,
+				9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */,
 				9C71A3A32CAEE3BE00247291 /* Network in Frameworks */,
 				9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */,
 			);
@@ -139,6 +142,7 @@
 				9C71A3A22CAEE3BE00247291 /* Network */,
 				9C71A3A42CAEE3BE00247291 /* NetworkInterface */,
 				9C71A3A62CAF011400247291 /* ToolKit */,
+				9C71A3AA2CB0074800247291 /* MVVMKit */,
 			);
 			productName = BetBetter;
 			productReference = 9C71A3582CAED30B00247291 /* BetBetter.app */;
@@ -598,6 +602,10 @@
 		9C71A3A62CAF011400247291 /* ToolKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ToolKit;
+		};
+		9C71A3AA2CB0074800247291 /* MVVMKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MVVMKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

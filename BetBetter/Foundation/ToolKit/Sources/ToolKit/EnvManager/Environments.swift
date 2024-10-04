@@ -14,10 +14,10 @@ public enum Environments {
     case dev
     case prod
     
-    public func apiURL(_ version: ApiVersion = .v3) -> URL {
+    public func apiURL(_ version: ApiVersion = .v4) -> URL {
         return switch self {
         case .dev:
-            URL(string: "https://api.themoviedb.org/" + version.rawValue)!
+            URL(string: "https://api.the-odds-api.com" + version.rawValue)!
         case .prod:
             fatalError("Not implemented")
         }
@@ -28,6 +28,6 @@ public enum Environments {
     }
     
     public enum ApiVersion: String {
-        case v3 = "3"
+        case v4 = "v3"
     }
 }

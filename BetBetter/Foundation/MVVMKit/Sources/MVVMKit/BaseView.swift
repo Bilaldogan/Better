@@ -10,7 +10,7 @@ import ToolKit
 
 /// A custom UIView that can manage either a scrollable or non-scrollable stack view layout.
 /// Provides flexibility with safe area handling and the ability to add subviews dynamically.
-class BaseView: UIView {
+public class BaseView: UIView {
     
     // MARK: - Private Properties
     

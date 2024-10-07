@@ -25,7 +25,6 @@ final class DependencyManager {
     func registerDependencies() {
         registerEnv()
         registerLogger()
-        registerImageLoader()
         registerNetworkService()
         registerRepositoryContainer()
     }
@@ -36,10 +35,6 @@ final class DependencyManager {
     
     private func registerLogger() {
         container.register(ErrorLoggable.self, instance: Logger())
-    }
-    
-    private func registerImageLoader() {
-        container.register(ImageLoaderProtocol.self, instance: ImageLoader())
     }
     
     private func registerNetworkService() {

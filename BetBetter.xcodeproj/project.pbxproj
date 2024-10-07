@@ -14,6 +14,7 @@
 		9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3AA2CB0074800247291 /* MVVMKit */; };
 		9C71A3B22CB011D100247291 /* EventList in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B12CB011D100247291 /* EventList */; };
 		9C71A3B72CB33E8600247291 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B62CB33E8600247291 /* Data */; };
+		9C71A3BC2CB3FF3000247291 /* EventDetail in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3BB2CB3FF3000247291 /* EventDetail */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C71A3BC2CB3FF3000247291 /* EventDetail in Frameworks */,
 				9C71A3A12CAEE3BE00247291 /* LoggerKit in Frameworks */,
 				9C71A3A72CAF011400247291 /* ToolKit in Frameworks */,
 				9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */,
@@ -151,6 +153,7 @@
 				9C71A3AA2CB0074800247291 /* MVVMKit */,
 				9C71A3B12CB011D100247291 /* EventList */,
 				9C71A3B62CB33E8600247291 /* Data */,
+				9C71A3BB2CB3FF3000247291 /* EventDetail */,
 			);
 			productName = BetBetter;
 			productReference = 9C71A3582CAED30B00247291 /* BetBetter.app */;
@@ -620,6 +623,10 @@
 		9C71A3B62CB33E8600247291 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
+		};
+		9C71A3BB2CB3FF3000247291 /* EventDetail */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EventDetail;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

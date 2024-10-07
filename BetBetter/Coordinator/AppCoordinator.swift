@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import ToolKit
 import EventList
+import EventDetail
 import MVVMKit
 
 class AppCoordinator: Coordinator {
@@ -35,6 +36,14 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator: EventListCoordinatorDelegate {
-    func showEventDetail() { }
+    func showEventDetail(_ id: String, sportTitle: String) {
+        let coordinator = EventDetailCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.parent = self
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
 }
+
+extension AppCoordinator: EventDetailCoordinatorDelegate { }
 

@@ -28,6 +28,8 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
     private var envManager: EnvManageable
     private let repository: EventsRepositoryable
     
+    private var events = [EventCellDisplayItem]()
+    
     init(
         coordinator: EventListCoordinatable?,
         repository: EventsRepositoryable,
@@ -58,10 +60,10 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
     func fetchData() {
         Task {
             do {
-                let events = try await repository.getEvents(sport: "americanfootball_nfl")
-                sendAction(.reload(events.map({
-                    return EventCellDisplayItem(id: $0.id, homeTeam: $0.homeTeam, awayTeam: $0.awayTeam, date: "date")
-                })))
+                self.events = try await repository.getEvents(sport: "americanfootball_nfl").map({
+                    EventCellDisplayItem(id: $0.id, homeTeam: $0.homeTeam, awayTeam: $0.awayTeam, sportTitle: $0.sportTitle, date: "date")
+                })
+                sendAction(.reload(events))
             } catch {
                 print("error", error)
             }
@@ -74,6 +76,9 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
 //MARK: - EventListListener
 extension ListViewModel: EventListListener {
     func didSelectItem(_ indexPath: IndexPath) async {
-        print("İtem selected at", indexPath)
+        let event = events[indexPath.row]
+        await MainActor.run {
+            coordinator?.showEventDetail(event.id, sportTitle: event.sportTitle)
+        }
     }
 }

@@ -69,6 +69,11 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
         }
     }
     
-
 }
 
+//MARK: - EventListListener
+extension ListViewModel: EventListListener {
+    func didSelectItem(_ indexPath: IndexPath) async {
+        print("İtem selected at", indexPath)
+    }
+}

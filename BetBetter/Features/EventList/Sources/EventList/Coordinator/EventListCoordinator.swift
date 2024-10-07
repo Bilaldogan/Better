@@ -28,12 +28,15 @@ public final class EventListCoordinator: EventListCoordinatable {
     }
 
     public func start() {
+        let layoutHelper = EventListLayoutHelper()
         let viewModel = ListViewModel(
             coordinator: self,
             repository: DependencyContainer.shared.resolve(RepositoryContainer.self).eventsRepository,
             envManager: DependencyContainer.shared.resolve(EnvManageable.self)
         )
         let listViewController = ListViewController(viewModel: viewModel, view: EventListView())
+        listViewController.layoutHelper = layoutHelper
+        layoutHelper.listener = viewModel
         navigationController?.pushViewController(listViewController, animated: true)
     }
     

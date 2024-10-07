@@ -9,9 +9,15 @@ enum Sections {
     case events
 }
 
-struct EventCellDisplayItem: Hashable {
+struct OddDisplayItem: Hashable {
     let id: String
     let homeTeam: String
     let awayTeam: String
     let date: String
+}
+
+enum OddResultType: String {
+    case home = "H"
+    case away = "A"
+    case draw = "D"
 }

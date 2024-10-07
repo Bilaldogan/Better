@@ -41,6 +41,14 @@ final class EventDetailView: BaseView {
     override func isFilled() -> Bool {
         return true
     }
+    
+    public func setEventDetails(_ item: EventDetailDisplayItem) {
+        sportTitleLabel.text = item.sportTitle
+        dateLabel.text = item.date
+        timeLabel.text = item.time
+        
+        sumView.setEventDetails(item)
+    }
 }
 
 // MARK: - Drawing

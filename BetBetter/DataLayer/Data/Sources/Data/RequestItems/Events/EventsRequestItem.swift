@@ -8,7 +8,6 @@
 import Foundation
 import NetworkInterface
 
-
 struct EventsRequestItem: HTTPTask {
     typealias Response = [EventResponseItem]
     let route: Route

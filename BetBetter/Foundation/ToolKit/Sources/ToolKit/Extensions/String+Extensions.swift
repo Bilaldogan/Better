@@ -23,4 +23,9 @@ public extension String {
 
         return outputFormatter.string(from: date)
     }
+    
+    func getAcronym() -> String {
+        let array = components(separatedBy: .whitespaces)
+        return array.reduce("") { $0 + String($1.first!)}
+    }
 }

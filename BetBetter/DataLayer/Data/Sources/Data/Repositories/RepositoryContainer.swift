@@ -11,9 +11,11 @@ public class RepositoryContainer {
     private let networkProvider: NetworkProviderInterface
 
     public let eventsRepository: EventsRepositoryable
-
+    public let oddsRespository: OddsRepositoryable
+    
     public init(_ networkProvider: NetworkProviderInterface) {
         self.networkProvider = networkProvider
         eventsRepository = EventsRepository(networkProvider)
+        oddsRespository = OddsRepository(networkProvider)
     }
 }

@@ -67,7 +67,6 @@ open class BaseViewController<VM: BaseViewModelable, ViewSource: BaseView>: UIVi
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     /// Called before the view is removed from the window.

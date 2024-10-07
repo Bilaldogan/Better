@@ -22,6 +22,10 @@ final class EventDetailViewController<VM: EventDetailViewModelable,
         
         viewModel.observer = { [weak self] action in
             guard let self else { return }
+            switch action {
+            case .setEventDetails(let details):
+                viewSource.setEventDetails(details)
+            }
         }
     }
     

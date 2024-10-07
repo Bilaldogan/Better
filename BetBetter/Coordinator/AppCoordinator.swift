@@ -36,8 +36,12 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator: EventListCoordinatorDelegate {
-    func showEventDetail(_ id: String, sportTitle: String) {
-        let coordinator = EventDetailCoordinator(navigationController: navigationController)
+    
+    func showEventDetail(_ id: String, sportTitle: String, sportKey: String) {
+        let coordinator = EventDetailCoordinator(
+            navigationController: navigationController,
+            transtionData: .init(id: id, sportKey: sportKey)
+        )
         coordinator.delegate = self
         coordinator.parent = self
         childCoordinators.append(coordinator)

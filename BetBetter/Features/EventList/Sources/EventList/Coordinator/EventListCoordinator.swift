@@ -11,7 +11,7 @@ import MVVMKit
 import Data
 
 public protocol EventListCoordinatable: AnyObject, Coordinator {
-    func showEventDetail(_ id: String, sportTitle: String)
+    func showEventDetail(_ id: String, sportTitle: String, sportKey: String)
 }
 
 public protocol EventListCoordinatorDelegate: EventListCoordinatable {}
@@ -40,7 +40,7 @@ public final class EventListCoordinator: EventListCoordinatable {
         navigationController?.pushViewController(listViewController, animated: true)
     }
     
-    public func showEventDetail(_ id: String, sportTitle: String) {
-        delegate?.showEventDetail(id, sportTitle: sportTitle)
+    public func showEventDetail(_ id: String, sportTitle: String, sportKey: String) {
+        delegate?.showEventDetail(id, sportTitle: sportTitle, sportKey: sportKey)
     }
 }

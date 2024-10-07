@@ -39,9 +39,15 @@ final class EventSumView: UIView {
         matchInfoLabel.text = "A-B"
         matchInfoLabel.textAlignment = .center
         
-        homeSymbolLabel.font = .systemFont(ofSize: 45)
-        awaySymbolLabel.font = .systemFont(ofSize: 45)
+        homeSymbolLabel.font = .systemFont(ofSize: 40)
+        awaySymbolLabel.font = .systemFont(ofSize: 40)
         matchInfoLabel.font = .systemFont(ofSize: 20)
+    }
+    
+    public func setEventDetails(_ item: EventDetailDisplayItem) {
+        homeSymbolLabel.text = item.homeTeamSymbol
+        awaySymbolLabel.text = item.awayTeamSymbol
+        matchInfoLabel.text = item.matchInfo
     }
 }
     
@@ -77,5 +83,7 @@ private extension EventSumView {
         matchInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         matchInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         matchInfoLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        matchInfoLabel.leadingAnchor.constraint(greaterThanOrEqualTo: homeSymbolLabel.trailingAnchor).isActive = true
+        matchInfoLabel.trailingAnchor.constraint(lessThanOrEqualTo: awaySymbolLabel.leadingAnchor).isActive = true
     }
 }

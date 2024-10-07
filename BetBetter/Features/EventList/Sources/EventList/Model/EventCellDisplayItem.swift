@@ -13,6 +13,7 @@ struct EventCellDisplayItem: Hashable {
     let id: String
     let homeTeam: String
     let awayTeam: String
+    let sportKey: String
     let sportTitle: String
     let date: String
 }

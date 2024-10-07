@@ -60,8 +60,15 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
     func fetchData() {
         Task {
             do {
-                self.events = try await repository.getEvents(sport: "americanfootball_nfl").map({
-                    EventCellDisplayItem(id: $0.id, homeTeam: $0.homeTeam, awayTeam: $0.awayTeam, sportTitle: $0.sportTitle, date: "date")
+                self.events = try await repository.getEvents(sport: "soccer_turkey_super_league").map({
+                    EventCellDisplayItem(
+                        id: $0.id,
+                        homeTeam: $0.homeTeam,
+                        awayTeam: $0.awayTeam,
+                        sportKey: $0.sportKey,
+                        sportTitle: $0.sportTitle,
+                        date: "date"
+                    )
                 })
                 sendAction(.reload(events))
             } catch {
@@ -78,7 +85,7 @@ extension ListViewModel: EventListListener {
     func didSelectItem(_ indexPath: IndexPath) async {
         let event = events[indexPath.row]
         await MainActor.run {
-            coordinator?.showEventDetail(event.id, sportTitle: event.sportTitle)
+            coordinator?.showEventDetail(event.id, sportTitle: event.sportTitle, sportKey: event.sportKey)
         }
     }
 }

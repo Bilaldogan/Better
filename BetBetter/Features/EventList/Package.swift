@@ -14,7 +14,8 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "ToolKit", path: "../../Foundation/ToolKit"),
-        .package(name: "MVVMKit", path: "../../Foundation/MVVMKit")
+        .package(name: "MVVMKit", path: "../../Foundation/MVVMKit"),
+        .package(name: "Data", path: "../../DataLayer/Data")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -22,9 +23,12 @@ let package = Package(
         .target(
             name: "EventList", dependencies: [
                 .product(name: "ToolKit", package: "ToolKit"),
-                .product(name: "MVVMKit", package: "MVVMKit")
+                .product(name: "MVVMKit", package: "MVVMKit"),
+                .product(name: "Data", package: "Data")
             ],
-            resources: [ ]
+            resources: [
+                .process("Resources")
+            ]
         ),
         .testTarget(
             name: "EventListTests",

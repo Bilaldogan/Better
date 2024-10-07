@@ -8,9 +8,10 @@
 import Foundation
 import ToolKit
 import MVVMKit
+import Data
 
 enum ListPageActions {
-    case reload
+    case reload([EventCellDisplayItem])
 }
 
 protocol ListViewModelable: BaseViewModelable, ActionSendable where ActionType == ListPageActions {
@@ -25,28 +26,29 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
     weak var coordinator : EventListCoordinatable?
     
     private var envManager: EnvManageable
+    private let repository: EventsRepositoryable
     
     init(
         coordinator: EventListCoordinatable?,
+        repository: EventsRepositoryable,
         envManager: EnvManageable
     ) {
         self.coordinator = coordinator
         self.envManager = envManager
-        
+        self.repository = repository
         super.init()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sendAction(.reload)
         fetchData()
     }
     
     func didChangeSearchText(_ key: String) {
-        sendAction(.reload)
     }
     
     func didSearchClear() {
+        
     }
     
     func didTapSearchDone() {
@@ -54,8 +56,18 @@ final class ListViewModel: BaseViewModel, ListViewModelable {
     }
     
     func fetchData() {
+        Task {
+            do {
+                let events = try await repository.getEvents(sport: "americanfootball_nfl")
+                sendAction(.reload(events.map({
+                    return EventCellDisplayItem(id: $0.id, homeTeam: $0.homeTeam, awayTeam: $0.awayTeam, date: "date")
+                })))
+            } catch {
+                print("error", error)
+            }
+            
+        }
     }
-    
     
 
 }

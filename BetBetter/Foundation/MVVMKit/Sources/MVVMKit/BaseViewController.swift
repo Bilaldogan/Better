@@ -19,7 +19,7 @@ open class BaseViewController<VM: BaseViewModelable, ViewSource: BaseView>: UIVi
     public var viewModel: VM
     
     /// The view source associated with the view controller. This is the main view of the controller.
-    public var viewSource: BaseView
+    public var viewSource: ViewSource
     
     // MARK: - Private Properties
     
@@ -36,7 +36,7 @@ open class BaseViewController<VM: BaseViewModelable, ViewSource: BaseView>: UIVi
     /// - Parameters:
     ///   - viewModel: The view model to bind to the controller.
     ///   - view: The view to be used as the main view of the controller.
-    public init(viewModel: VM, view: BaseView) {
+    public init(viewModel: VM, view: ViewSource) {
         self.viewModel = viewModel
         self.viewSource = view
         super.init(nibName: nil, bundle: nil)

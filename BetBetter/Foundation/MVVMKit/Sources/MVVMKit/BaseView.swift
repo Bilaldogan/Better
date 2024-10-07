@@ -10,7 +10,7 @@ import ToolKit
 
 /// A custom UIView that can manage either a scrollable or non-scrollable stack view layout.
 /// Provides flexibility with safe area handling and the ability to add subviews dynamically.
-public class BaseView: UIView {
+open class BaseView: UIView {
     
     // MARK: - Private Properties
     
@@ -36,14 +36,19 @@ public class BaseView: UIView {
     
     // MARK: - Initializers
     
-    /// Initializes the BaseView programmatically.
-    override init(frame: CGRect) {
+    public init() {
         super.init(frame: .zero)
         setupView()
     }
     
+    /// Initializes the BaseView programmatically.
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
     /// Initializes the BaseView from an Interface Builder or Storyboard.
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
@@ -80,19 +85,19 @@ public class BaseView: UIView {
     
     /// Determines if the content should be scrollable.
     /// - Returns: A boolean indicating if the view should scroll.
-    func isScrollable() -> Bool {
+    open func isScrollable() -> Bool {
         return false
     }
     
     /// Determines if the stack view should fill the entire view height.
     /// - Returns: A boolean indicating if the stack view should fill.
-    func isFilled() -> Bool {
+    open func isFilled() -> Bool {
         return false
     }
     
     /// Determines if safe area constraints should be used.
     /// - Returns: A boolean indicating if safe area should be respected.
-    func useSafeArea() -> Bool {
+    open func useSafeArea() -> Bool {
         return true
     }
     

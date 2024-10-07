@@ -13,6 +13,7 @@
 		9C71A3A72CAF011400247291 /* ToolKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3A62CAF011400247291 /* ToolKit */; };
 		9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3AA2CB0074800247291 /* MVVMKit */; };
 		9C71A3B22CB011D100247291 /* EventList in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B12CB011D100247291 /* EventList */; };
+		9C71A3B72CB33E8600247291 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B62CB33E8600247291 /* Data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		9C71A3992CAEDB9C00247291 /* Exceptions for "BetBetter" folder in "BetBetter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				DataLayer/Data,
 				DataLayer/Network,
 				Features/EventList,
 				Foundation/LoggerKit,
@@ -75,6 +77,7 @@
 				9C71A3B22CB011D100247291 /* EventList in Frameworks */,
 				9C71A3A32CAEE3BE00247291 /* Network in Frameworks */,
 				9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */,
+				9C71A3B72CB33E8600247291 /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +150,7 @@
 				9C71A3A62CAF011400247291 /* ToolKit */,
 				9C71A3AA2CB0074800247291 /* MVVMKit */,
 				9C71A3B12CB011D100247291 /* EventList */,
+				9C71A3B62CB33E8600247291 /* Data */,
 			);
 			productName = BetBetter;
 			productReference = 9C71A3582CAED30B00247291 /* BetBetter.app */;
@@ -612,6 +616,10 @@
 		9C71A3B12CB011D100247291 /* EventList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EventList;
+		};
+		9C71A3B62CB33E8600247291 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

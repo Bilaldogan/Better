@@ -17,17 +17,14 @@ public enum Environments {
     public func apiURL(_ version: ApiVersion = .v4) -> URL {
         return switch self {
         case .dev:
-            URL(string: "https://api.the-odds-api.com" + version.rawValue)!
+            URL(string: "https://api.the-odds-api.com/" + version.rawValue)!
         case .prod:
             fatalError("Not implemented")
         }
     }
     
-    public func cdnURLPrefix() -> String {
-        return "https://image.tmdb.org/t/p/"
-    }
     
     public enum ApiVersion: String {
-        case v4 = "v3"
+        case v4 = "v4"
     }
 }

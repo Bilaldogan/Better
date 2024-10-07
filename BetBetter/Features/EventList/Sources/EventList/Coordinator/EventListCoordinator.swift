@@ -8,6 +8,7 @@ import UIKit
 import Foundation
 import ToolKit
 import MVVMKit
+import Data
 
 public protocol EventListCoordinatable: AnyObject, Coordinator {
     func showEventDetail()
@@ -29,9 +30,10 @@ public final class EventListCoordinator: EventListCoordinatable {
     public func start() {
         let viewModel = ListViewModel(
             coordinator: self,
+            repository: DependencyContainer.shared.resolve(RepositoryContainer.self).eventsRepository,
             envManager: DependencyContainer.shared.resolve(EnvManageable.self)
         )
-        let listViewController = ListViewController(viewModel: viewModel, view: BaseView())
+        let listViewController = ListViewController(viewModel: viewModel, view: EventListView())
         navigationController?.pushViewController(listViewController, animated: true)
     }
     

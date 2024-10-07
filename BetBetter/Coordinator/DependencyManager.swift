@@ -10,6 +10,7 @@ import Network
 import NetworkInterface
 import ToolKit
 import LoggerKit
+import Data
 
 /// A utility class that manages the registration of dependencies within a dependency container.
 /// This class is designed to separate the implementation details of dependency injection
@@ -26,6 +27,7 @@ final class DependencyManager {
         registerLogger()
         registerImageLoader()
         registerNetworkService()
+        registerRepositoryContainer()
     }
 
     private func registerEnv() {
@@ -44,4 +46,9 @@ final class DependencyManager {
         container.register(NetworkProviderInterface.self, instance: NetworkProvider())
     }
     
+    private func registerRepositoryContainer() {
+        let networkService = container.resolve(NetworkProviderInterface.self)
+        let instance = RepositoryContainer(networkService)
+        container.register(RepositoryContainer.self, instance: instance)
+    }
 }

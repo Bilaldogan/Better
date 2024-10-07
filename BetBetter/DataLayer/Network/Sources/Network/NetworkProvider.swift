@@ -113,6 +113,8 @@ private extension NetworkProvider {
     func decodeResponse<T: Decodable>(_ data: Data, with strategy: JSONDecoder.KeyDecodingStrategy) throws -> T {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = strategy
+        //TODO: make param
+        decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(T.self, from: data)
     }
 }

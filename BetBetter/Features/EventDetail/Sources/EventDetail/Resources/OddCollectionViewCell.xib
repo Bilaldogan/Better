@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="OddCollectionViewCell" customModule="EventDetail">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYs-IS-Jsy">
+                    <rect key="frame" x="8.0000000000000018" y="8" width="28.666666666666671" height="13.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="63" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-qP-nky">
+                    <rect key="frame" x="8" y="29.333333333333336" width="200" height="92.666666666666657"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
+            <constraints>
+                <constraint firstItem="FYs-IS-Jsy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7RJ-YN-Ci0"/>
+                <constraint firstItem="hHv-qP-nky" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-8" id="Gf7-sD-bDJ"/>
+                <constraint firstItem="FYs-IS-Jsy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="GzV-ZQ-vgo"/>
+                <constraint firstItem="hHv-qP-nky" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="Zax-OJ-AeC"/>
+                <constraint firstAttribute="bottom" secondItem="hHv-qP-nky" secondAttribute="bottom" constant="8" id="iCp-lR-NU3"/>
+                <constraint firstItem="hHv-qP-nky" firstAttribute="top" secondItem="FYs-IS-Jsy" secondAttribute="bottom" constant="8" id="sFX-y4-hoj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="oddsStackView" destination="hHv-qP-nky" id="xSs-X0-IAr"/>
+                <outlet property="titleLabel" destination="FYs-IS-Jsy" id="uZd-w9-cdn"/>
+            </connections>
+            <point key="canvasLocation" x="-132.06106870229007" y="-54.225352112676056"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

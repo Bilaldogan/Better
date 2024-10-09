@@ -56,7 +56,7 @@ final class EventListLayoutHelper: NSObject, EventListLayoutFactory {
         
         dataSource = UICollectionViewDiffableDataSource<Sections, EventCellDisplayItem>(
             collectionView: collectionView,
-            cellProvider: { [weak self] (collectionView, indexPath, item) -> UICollectionViewCell? in
+            cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
                 let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
                 cell.configure(with: item)
                 return cell

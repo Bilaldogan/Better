@@ -15,6 +15,7 @@
 		9C71A3B22CB011D100247291 /* EventList in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B12CB011D100247291 /* EventList */; };
 		9C71A3B72CB33E8600247291 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3B62CB33E8600247291 /* Data */; };
 		9C71A3BC2CB3FF3000247291 /* EventDetail in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3BB2CB3FF3000247291 /* EventDetail */; };
+		9C71A3C22CB4423C00247291 /* Basket in Frameworks */ = {isa = PBXBuildFile; productRef = 9C71A3C12CB4423C00247291 /* Basket */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 				9C71A3A12CAEE3BE00247291 /* LoggerKit in Frameworks */,
 				9C71A3A72CAF011400247291 /* ToolKit in Frameworks */,
 				9C71A3AB2CB0074800247291 /* MVVMKit in Frameworks */,
+				9C71A3C22CB4423C00247291 /* Basket in Frameworks */,
 				9C71A3B22CB011D100247291 /* EventList in Frameworks */,
 				9C71A3A32CAEE3BE00247291 /* Network in Frameworks */,
 				9C71A3A52CAEE3BE00247291 /* NetworkInterface in Frameworks */,
@@ -154,6 +156,7 @@
 				9C71A3B12CB011D100247291 /* EventList */,
 				9C71A3B62CB33E8600247291 /* Data */,
 				9C71A3BB2CB3FF3000247291 /* EventDetail */,
+				9C71A3C12CB4423C00247291 /* Basket */,
 			);
 			productName = BetBetter;
 			productReference = 9C71A3582CAED30B00247291 /* BetBetter.app */;
@@ -627,6 +630,10 @@
 		9C71A3BB2CB3FF3000247291 /* EventDetail */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EventDetail;
+		};
+		9C71A3C12CB4423C00247291 /* Basket */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Basket;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

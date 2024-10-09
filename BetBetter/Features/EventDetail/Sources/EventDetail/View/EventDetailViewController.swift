@@ -11,9 +11,12 @@ import MVVMKit
 final class EventDetailViewController<VM: EventDetailViewModelable,
                                       VS: EventDetailView>: BaseViewController<VM, VS> {
     
+    var layoutHelper: (any EventOddsLayoutFactory)!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGreen
+        layoutHelper.bind(for: viewSource.collectionView)
     }
     
     
@@ -25,6 +28,8 @@ final class EventDetailViewController<VM: EventDetailViewModelable,
             switch action {
             case .setEventDetails(let details):
                 viewSource.setEventDetails(details)
+            case .reloadOdds(let items):
+                layoutHelper.applySnaphot(for: items)
             }
         }
     }

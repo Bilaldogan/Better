@@ -4,34 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "MVVMKit",
+    name: "Basket",
     platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MVVMKit",
-            targets: ["MVVMKit"]),
+            name: "Basket",
+            targets: ["Basket"]),
     ],
     dependencies: [
-        .package(name: "ToolKit", path: "../ToolKit"),
-        .package(name: "LoggerKit", path: "../LoggerKit")
-
+        .package(name: "ToolKit", path: "../../Foundation/ToolKit"),
+        .package(name: "MVVMKit", path: "../../Foundation/MVVMKit"),
+        .package(name: "Data", path: "../../DataLayer/Data")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MVVMKit",
-            dependencies: [
+            name: "Basket", dependencies: [
                 .product(name: "ToolKit", package: "ToolKit"),
-                .product(name: "LoggerKit", package: "LoggerKit")
+                .product(name: "MVVMKit", package: "MVVMKit"),
+                .product(name: "Data", package: "Data")
             ],
             resources: [
                 .process("Resources")
             ]
-        ),
-        .testTarget(
-            name: "MVVMKitTests",
-            dependencies: ["MVVMKit"]),
+        )
     ]
 )

@@ -14,6 +14,9 @@ final class EventDetailView: BaseView {
     private let sumView = EventSumView()
     private let dateLabel = UILabel()
     private let timeLabel = UILabel()
+    private let oddsTitleLabel = UILabel()
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     
     override init() {
         super.init()
@@ -23,7 +26,7 @@ final class EventDetailView: BaseView {
     
     private func prepare() {
         backgroundColor = .systemGreen
-        
+        collectionView.backgroundColor = .systemGreen.withAlphaComponent(0.5)
         sportTitleLabel.textAlignment = .center
         sportTitleLabel.text = "TR ligi"
         
@@ -32,6 +35,9 @@ final class EventDetailView: BaseView {
         
         timeLabel.text = "21: 00"
         timeLabel.textAlignment = .center
+        
+        oddsTitleLabel.font = .systemFont(ofSize: 20)
+        oddsTitleLabel.textAlignment = .center
     }
     
     @MainActor required init?(coder: NSCoder) {
@@ -47,6 +53,8 @@ final class EventDetailView: BaseView {
         dateLabel.text = item.date
         timeLabel.text = item.time
         
+        oddsTitleLabel.text = item.oddsTitle
+        
         sumView.setEventDetails(item)
     }
 }
@@ -57,12 +65,20 @@ private extension EventDetailView {
     /// This method should use draw the views in superview.
     /// - Example addSubview, addArrangedSubview, updatePadding...
     func draw() {
+        
+        let seperator = UIView()
+        seperator.backgroundColor = .yellow
+        seperator.translatesAutoresizingMaskIntoConstraints = false
+        seperator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
         addArrangedSubviews(
             sportTitleLabel,
             sumView,
             dateLabel,
             timeLabel,
-            UIView()
+            seperator,
+            oddsTitleLabel,
+            collectionView
         )
     }
     

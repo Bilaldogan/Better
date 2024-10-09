@@ -32,15 +32,20 @@ public final class EventDetailCoordinator: EventDetailCoordinatable {
     }
 
     public func start() {
+        let layoutHelper = EventOddsLayoutHelper()
+
         let viewModel = EventDetailViewModel(
             coordinator: self,
             repository: DependencyContainer.shared.resolve(RepositoryContainer.self).oddsRespository,
             transitionData: transtionData,
             envManager: DependencyContainer.shared.resolve(EnvManageable.self),
-            objectConverter: EventDetailObjectConverter()
+            objectConverter: EventDetailObjectConverter(),
+            basket: .shared
         )
-        let listViewController = EventDetailViewController(viewModel: viewModel, view: EventDetailView())
-        navigationController?.pushViewController(listViewController, animated: true)
+        let eventDetailViewController = EventDetailViewController(viewModel: viewModel, view: EventDetailView())
+        eventDetailViewController.layoutHelper = layoutHelper
+        layoutHelper.listener = viewModel
+        navigationController?.pushViewController(eventDetailViewController, animated: true)
     }
     
 }

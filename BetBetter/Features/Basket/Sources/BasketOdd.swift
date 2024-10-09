@@ -16,12 +16,14 @@ public struct BasketOdd: Codable, Hashable {
     public let bookmaker: String
     public let marketKey: String
     public let selectedOdd: OddType
+    public let price: Double
     
-    public init(eventId: String, bookmaker: String, marketKey: String, selectedOdd: OddType) {
+    public init(eventId: String, bookmaker: String, marketKey: String, selectedOdd: OddType, price: Double) {
         self.eventId = eventId
         self.bookmaker = bookmaker
         self.marketKey = marketKey
         self.selectedOdd = selectedOdd
+        self.price = price
     }
     
     public func hash(into hasher: inout Hasher) {

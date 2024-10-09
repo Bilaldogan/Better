@@ -34,7 +34,8 @@ struct EventDetailObjectConverter {
                     eventId: response.id,
                     bookmaker: bookmaker.key,
                     marketKey: market.key,
-                    selectedOdd: .draw //TODO: fix make optional
+                    selectedOdd: .draw,
+                    price: 0 //TODO: fix make optional
                 ))
                 
                 let odds = market.outcomes.map { outcome in
@@ -104,7 +105,8 @@ struct EventDetailObjectConverter {
             eventId: item.eventId,
             bookmaker: item.bookmaker,
             marketKey: item.marketKey,
-            selectedOdd: basketSelectedOdd
+            selectedOdd: basketSelectedOdd,
+            price: odd.price
         )
         
         return basketOdd

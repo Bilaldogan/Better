@@ -11,6 +11,7 @@ import ToolKit
 import EventList
 import EventDetail
 import MVVMKit
+import Basket
 
 class AppCoordinator: Coordinator {
     weak var parent: Coordinator?
@@ -24,6 +25,7 @@ class AppCoordinator: Coordinator {
         self.window.isHidden = false
         self.window.rootViewController = navigationController
         self.window.makeKeyAndVisible()
+        addBaskeView()
     }
 
     func start() {
@@ -32,6 +34,16 @@ class AppCoordinator: Coordinator {
         coordinator.parent = self
         childCoordinators.append(coordinator)
         coordinator.start()
+    }
+    
+    func addBaskeView() {
+        let viewModel = BasketViewModel(basket: .shared)
+        let basket = BasketView(viewModel: viewModel)
+        basket.translatesAutoresizingMaskIntoConstraints = false
+        window.addSubview(basket)
+        basket.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        basket.leadingAnchor.constraint(equalTo: window.leadingAnchor).isActive = true
+        basket.trailingAnchor.constraint(equalTo: window.trailingAnchor).isActive = true
     }
 }
 
